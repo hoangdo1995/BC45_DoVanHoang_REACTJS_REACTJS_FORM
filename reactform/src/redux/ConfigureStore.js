@@ -106,7 +106,7 @@ export const store = configureStore({
                     case 'EDIT_FORM_COMMIT':{
                         getDataFromLocalStorage();
                         const {id} = action.payload;
-                        let indexEdit = state.findIndex(item=>item.id=id);
+                        let indexEdit = state.findIndex(item=>item.id==id);
                         let newState = [...state];
                         newState[indexEdit] = action.payload;
                         state = newState;
