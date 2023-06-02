@@ -61,7 +61,6 @@ export const store = configureStore({
                         break;
                     }
                     case 'EDIT_REGISTER':{
-                        console.log('edit');
                         const registerEdit = action.payload;
                         state = registerEdit;
                         break;
@@ -115,17 +114,13 @@ export const store = configureStore({
                     }
                     case 'GET_ARR_REGISTER':{
                         const searchSlug = stringToSlug(action.payload);
-                        console.log(searchSlug);
                         const cloneState = [...state];
                         let newState = cloneState.filter(item => {
-                            console.log(item.name.search(searchSlug));
                             return stringToSlug(item.name).search(searchSlug)!==-1});
-                        console.log('filter:',newState);
                         state = newState;
                         break;
                     }
                 }
-                console.log('state',state);
                 return state;
             },
             arrErrorReducer:(state=errorArr,action)=>{

@@ -41,11 +41,6 @@ class RegisterForm extends Component {
       this.props.dispatch(action);
     }
   }
-
-
-
-
-
   render() {
     const {name,email,phone,id} = this.props.registerReducer;
     const {nameError,emailError,phoneError,idError} = this.props.arrErrorReducer;
@@ -59,28 +54,28 @@ class RegisterForm extends Component {
           <div className="card-body">
             <form action="" className='frm' onSubmit={this.handleSubmit}>
               <div className='row'>
-              <div className="form-group col-6 mt-3">
+              <div className="form-group col-sm-12 col-md-6  mt-3">
                 <div className='d-flex justify-content-between'>
                   <p className='text-start'>Mã SV</p>
                   <p className='error_input text-end text-danger' id='error_id'>{idError}</p>
                 </div>
                 <input type="text" className='form-control' value={id} onChange={this.handleChange} id='id' disabled={idInputState}/>
               </div>
-              <div className="form-group col-6 mt-3">
+              <div className="form-group col-sm-12 col-md-6 mt-3">
                 <div className='d-flex justify-content-between'>
                   <p className='text-start'>Họ và tên</p>
                   <p className='error_input text-end text-danger' id='error_name'>{nameError}</p>
                 </div>
                 <input type="text" className='form-control' value={name} onChange={this.handleChange} id='name'/>
               </div>
-              <div className="form-group col-6 mt-3">
+              <div className="form-group col-sm-12 col-md-6 mt-3">
                 <div className='d-flex justify-content-between'>
                   <p className='text-start'>Số điện thoại</p>
                   <p className='error_input text-end text-danger' id='error_phone'>{phoneError}</p>
                 </div>
                 <input type="text" className='form-control' value={phone} onChange={this.handleChange} id='phone'/>
               </div>
-              <div className="form-group col-6 mt-3">
+              <div className="form-group col-sm-12 col-md-6 mt-3">
                 <div className='d-flex justify-content-between'>
                   <p className='text-start'>Email</p>
                   <p className='error_input text-end text-danger' id='error_email'>{emailError}</p>
